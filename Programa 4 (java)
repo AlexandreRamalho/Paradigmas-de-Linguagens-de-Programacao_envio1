@@ -1,1 +1,47 @@
-P
+package plp_02;
+
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int cod = -1;
+		Double apagar = 0.0, preco = 0.0;
+		do {
+			preco = 0.0;
+			System.out.println("digite o codigo do produto (0 para finalizar)");
+			cod = sc.nextInt();
+			
+			switch(cod) {
+			case 1:
+				preco = 0.5;
+				break;
+			case 2:
+				preco = 1.0;
+				break;
+			case 3:
+				preco = 2.5;
+				break;
+			case 4:
+				preco = 6.0;
+				break;
+			default:
+				cod = 100;
+				System.out.println("codigo invalido!");
+				break;
+			case 0:
+				break;
+			}
+			if(cod != 100 && cod !=0) {
+				System.out.println("digite a quantidade: ");
+				int qtd = sc.nextInt();
+				apagar += preco*qtd;
+			}
+			
+		}while(cod != 0);
+		
+		System.out.println("total a pagar: R$" + apagar + "0");
+		
+		sc.close();
+	}
+}
